@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>header for each page</title>
+    <style>
+        #navList a:hover { /*adds hover color over letters*/
+            background-color: rgb(243, 13, 232);
+        }
+
+        #navList li.active a { /*adds underline to current page in nav menu */
+            text-decoration:underline;
+        }
+
+        #navList{
+        margin: auto;
+        margin-left: 370px; /*left distance from left border of flex-container */
+        text-align: center;
+        list-style-type: none; /*hides list dots */
+        /* float: left; */ /*list order is menu about order. If i did right, order would be reversed */
+        font-family: "Brush Script MT", cursive;
+        /*padding: 10px;*/
+        font-size: xx-large; /*size of text*/
+        font-weight: bold;
+    }
+
+    .aList{
+       /* display: inline-block; */
+        color: white; /* changes the first line of the list to white since we used prepend in the script */
+    } 
+
+    .aList a{
+        color: white; /*. makes the rest of the list items white for menu in the website */
+        text-decoration: none;
+    }
+
+    /* #navList a {
+        text-align: center;
+        padding: 0 20px;
+        color: black; 
+
+    }*/
+
+    #icons a{
+        color: red;
+        font-size: 25px; /*sizing of icons */
+        margin-left: 75px; /*left distance away from menu */ 
+
+    }
+
+    .iconList{
+        display: inline-block; /*puts icons in a row */
+         /* spacing between icons */
+    }
+
+    .flex-container{ 
+        width: 100%; /*width from one side of screen to other */
+        min-height: 200px;
+        margin: 0 auto; 
+        padding-top: 2em; /*area between icons and top border of flex-container*/
+        display: -webkit-flex; /*for chrome*/
+        display: flex;
+        flex-direction: row; /*default is row. can do row-reverse, column, and column-reverse as well. */
+        margin-top: 2em;
+        background-color: black;
+        } 
+    
+    </style>
+
+</head>
+<body>
+    <div class=flex-container>
+        <div id="navBar"> 
+            <ul id= "navList">
+                <li class="aList"><a id= "bio" href="Bio.html">Bio</a></li>
+                <li class="aList"><a id= "family" href="Familyquotes.html"> Family Quotes</a></li>
+                <li class="aList"><a id= "friend" href="Friendquotes.html"> Friend Quotes </a></li>
+                <li class="aList"><a id= "concert" href="Concerts.html"> Concerts</a></li>
+                <li class="aList"><a id="tvAppearances" href="TVappAndInt.html"> TV Appearances & Interviews</a></li>
+            </ul>
+        </div>
+
+        <div id= "icons">
+            <a class="iconList" href="https://www.instagram.com/aaliyah/"><i class="fa fa-instagram"></i></a>
+            <a class="iconList" href="https://open.spotify.com/artist/0urTpYCsixqZwgNTkPJOJ4"><i class="fa fa-spotify"></i></a>
+            <a class="iconList" href="https://www.imdb.com/name/nm0004691/"><i class="fa fa-imdb"></i></a> 
+        </div>
+    </div> 
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+
+        //adds main page to the header using DOM
+        const ul_mainpage = document.querySelector('ul'); 
+        const mainPageListNode = document.createElement("li");
+
+        mainPageListNode.innerText = 'Main Page';
+
+        ul_mainpage.prepend(mainPageListNode);
+        mainPageListNode.style.color = 'white';
+        mainPageListNode.style.fontSize = 'xx-large'; 
+        mainPageListNode.href = 'mainpage.html';
+
+        //removes friend and family quotes pages using DOM 
+        const famQuoteElement = document.getElementById("family");
+        famQuoteElement.remove();
+
+        const friendQuoteElement = document.getElementById("friend");
+        friendQuoteElement.remove();
+
+    </script>
+    
+</body>
+</html>
