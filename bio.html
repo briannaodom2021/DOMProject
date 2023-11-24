@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaliyah's biography</title>
+
+    <style>
+        #headerDiv{
+            background-color: black;
+            margin-top: -2em;
+        }
+
+        #header-menu{
+            margin-left: 3em;
+        }
+
+        .background-image {
+            display: grid; /*centers picture */
+            margin: auto;
+            width: 70%;
+            max-height: 60%;
+            z-index: -1; /*moves the text above the picture. z-index of picture needs to be less or negative compared to text*/
+        }
+        
+        .bioText {
+            z-index: 1; 
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: black; 
+            /*font-style: italic; */
+            font-size: x-large;
+        } 
+
+        .bioTextCont {
+            font-weight: bolder;
+            font-size: x-large;
+        }
+
+        #imageContainer{
+            background-color: beige;
+        }
+
+        #textContainer{
+            text-align: center; /*centers text in div container */
+            margin-top: -20em;
+            margin-left: -30em;
+        }
+
+        #textContainer2{
+            text-align: center; /*centers text in div container */
+            margin-left: -32em;
+            color: chocolate;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="headerDiv">
+        <header id="header-menu"></header>
+    </div>
+
+    <div id="imageContainer">
+        <img class = "background-image" src="img/aaliyah-leather.jpg">
+    </div>
+
+    <div id="textContainer">
+        <p class= "bioText"><u> Biography </u> </p>
+    </div>
+
+    <div id="textContainer2">
+        <p class="bioTextCont"><a href="#bioCont"> Read More ...</span><a></a></p>
+    </div>
+
+    <div id="bioCont">
+        <p class="bioTextCont2">Blah Blah Blah</p>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script> //google jquery cdn. go to site and choose minimize from first jquery version on page for info above and copy.
+        $(function(){
+            $("#header-menu").load("header.html"); //jquery to copy header on each page
+        });
+    </script>
+</body>
+</html>
