@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concerts Page</title>
+
+    
+    <Style>
+        @import "https://unpkg.com/open-props";
+        @import "https://unpkg.com/open-props/normalize.min.css";
+
+        .media-scroller {
+            --spacer: 1rem; /*sets spacer size*/ 
+            display:grid;
+            gap: 1em; /*gap: var (--spacer); can set all (--size--number) to add in similar spaces between all the videos*/ /*gap: var (--size-3); 
+            */ /*open prop- adds gap between videos. ex. sizing, typography other examples of open prop */
+            grid-auto-flow: column; /* sets each vid as column*/
+            grid-auto-columns: 70%;  /*defines the width of each video */
+            /*padding: 0 var(--spacer) var(--spacer) var(--spacer);*/ /*top right bottom left. adds in even spacing around images*/
+            overflow-x: auto; /*scroll left to right */
+            overscroll-behavior-inline: contain; /*contains scrolling when get to the end. doesnt pull over rest of page */
+        } 
+
+        .flow {
+            display: grid;
+        }
+
+        .container {
+            inline-size: min(100% -4rem, 70rem);
+            margin-inline: auto; 
+        }
+
+        .page-header {
+            padding-block: 3em;
+            margin-block-end: 6em;
+            background-image: linear-gradient(to bottom right, blue, yellow);
+            box-shadow: 1em;
+            }
+        
+        .header-div {
+            background-color: black;
+        }
+
+        #header {
+            margin-top: -7em;
+            margin-left: 4em;
+        }
+
+        .page-title {
+            font-size: 4em;
+            margin: auto;
+            color: indigo;
+        }
+
+        .media-element { 
+            display: grid; /*title under videos moved off a bit */
+            gap: 20em; /*spacing of text under videos and the videos themselves*/ 
+            grid-template-rows: min-content; /*all the text under the videos in the row have images that are at the smallest size where the text won't overflow and will look a bit nicer. */
+            padding: 10% 10% 4% 10%; /*spacing between videos and around videos (top, right, bottom, left) */
+            background: 8em; /*background surface */
+            border-radius: 2em; /*rounds the border edge of each element*/
+            box-shadow: 2em; /*shadow around the outside of each image box */
+        }
+
+        .media-element > iframe { /*select all img elements where media-element is the parent */ 
+            inline-size: 100%; /*defines width of element block */
+            aspect-ratio: 150%; /*ratio of height to width. very wide image */
+            height: 300%; /* height of video */
+            object-fit: cover; /* sets how an img or video should be resized to fir a container */
+            }
+
+        .p {
+            display: grid;
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+        .snaps-inline {
+            scroll-snap-type: inline mandatory;
+            scroll-padding-inline: 1 em; /*var(--spacer, 1rem); */
+        }
+        
+        .snaps-inline > * { /*select all direct children */
+            scroll-snap-align: start; /*scroll snaps to different points on the scroll bar and at the beginning */
+        }
+
+    </Style>
+
+    <body>
+    <main>
+        <header class="page-header">
+            <div class="container flow">
+            <h1 class="page-title">Concerts</h1>
+            </div>
+        </header>
+
+        <div class="header-div">
+            <div id="header"></div>
+        </div>
+        
+        <div class="media-scroller with-overscroll snaps-inline snaps--individual">
+            <div class="media-element">
+                <iframe src="https://www.youtube.com/embed/1hk33RAr9gA"></iframe>
+                <p class="title"> Try Again (Live @ Rosie O'Donnell) </p>
+            </div>
+                <div class="media-element">
+                <iframe src="https://www.youtube.com/embed/v_Qy6vaMsFQ"></iframe>
+                <p class="title">Aaliyah-If Your Girl Only Knew </p>
+            </div>
+                <div class="media-element">
+                <iframe src="https://www.youtube.com/embed/ECrvgCyRw0tM" ></iframe>
+                <p class="title">Aaliyah - More Than A Woman (Live At the Tonight Show with Jay Leno)</p>
+            </div>
+            <div class="media-element">
+                <iframe src="https://www.youtube.com/embed/lCJ2io4D00w"></iframe>
+                <p class="title">Aaliyah and Timberland- Are You That Somebody</p>
+            </div>
+            <div class="media-element">
+                <iframe src="https://www.youtube.com/embed/lnGmhzJweVY"></iframe>
+                <p class="title">Timberland, Missy, Aaliyah Medley- Live 1998</p>
+            </div>
+            <div class="media-element">
+                <iframe src="https://www.youtube.com/embed/3PF8SdIlZGo"></iframe>
+                <p class="title">4 Page Letter Live</p>
+            </div>
+            <div class="media-element">
+                <iframe src="https://www.youtube.com/embed/s95a8ZccFfk"></iframe>
+                <p class="title">Aaliyah- Back and Forth Live</p>
+            </div>
+            <div class="media-element">
+                <iframe src="https://www.youtube.com/embed/https://z_yucDN5P5k"></iframe>
+                <p class="title">Aaliyah- One and A Million Live Superfest </p>
+            </div>
+        </div>
+
+    </main>
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script> //google jquery cdn. go to site and choose minimize from first jquery version on page for info above and copy.
+            $(function(){
+                $("#header").load("header.html"); //jquery to copy header on each page
+            });
+            
+        </script>
+        </script>
+    </body>
+</html>
